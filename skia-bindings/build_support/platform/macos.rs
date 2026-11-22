@@ -9,7 +9,7 @@ pub struct MacOs;
 
 impl PlatformDetails for MacOs {
     fn uses_freetype(&self) -> bool {
-        false
+        cfg!(feature = "embed-freetype")
     }
 
     fn gn_args(&self, _config: &BuildConfiguration, builder: &mut GnArgsBuilder) {
